@@ -1,0 +1,260 @@
+/**
+ * CSS Reset - http://meyerweb.com/eric/tools/css/reset/
+ * License: None (public domain)
+ * Copyright: Eric Meyer, http://meyerweb.com/eric/
+ *
+ * I've used Eric Meyer's reset as a base and modified it a bit to suit my needs.
+ */
+html, body, div, dl, dt, dd, ul, li,
+pre, form, fieldset, input, textarea, blockquote, th, td, section, figure {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+
+	/* Ensure that all long words are broken up so they do not exceed the width of their container elements. */
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+fieldset, img, abbr, acronym {
+	border: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a img {
+	text-decoration: none;
+}
+
+select, iframe {
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+address, caption, cite, code, dfn, var {
+	font-weight: normal;
+	font-style: normal;
+}
+
+code {
+	font-family: monospace;
+}
+
+q:before, q:after {
+	content: '';
+}
+
+ul {
+	list-style: none;
+}
+
+mark {
+	background: none;
+}
+
+button {
+	border: none;
+}
+
+/**
+ * Generic Styles
+ */
+body {
+	min-height: 740px;
+	background: #700;
+	font-family: 'PT Sans', sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	font-style: italic;
+}
+
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+.small-img {
+	width: auto;
+	max-height: 60%;
+	margin: auto;
+	display: block;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+.slide.has-code {
+	font-size: 20px;
+}
+
+
+/**
+ * Presentation Steps
+ */
+.step {
+	position: relative;
+	width: 1000px;
+	padding: 40px;
+	margin: 20px auto;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+
+	font-family: 'PT Serif', georgia, serif;
+	font-size: 48px;
+	line-height: 1.5;
+}
+
+.impress-enabled .step {
+	margin: 0;
+	opacity: 0.3;
+
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
+}
+
+.impress-enabled .step.active {
+	opacity: 1
+}
+
+
+/**
+ * Overview Slide
+ */
+#overview {
+	display: none
+}
+
+.impress-on-overview .step {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.impress-on-overview #impress > div {
+	transform: rotateZ(-15deg) rotateY(0deg) rotateX(0deg) translate3d(-3600px, 0, 0px) !important;
+}
+
+
+/**
+ * Slides
+ */
+.slide {
+	display: block;
+
+	width: 1000px;
+	height: 800px;
+	padding: 40px 60px;
+
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, .3);
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+	color: #333;
+
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 28px;
+	line-height: 36px;
+	letter-spacing: -1px;
+}
+
+.slide h1,
+.slide h2,
+.slide h3 {
+	margin: 0.5em 0;
+	line-height: 1.2em;
+}
+
+.slide h1, .slide h3.slide-title {
+	margin-top: 0;
+	color: #700;
+	font-size: 60px;
+}
+
+.slide h2 {
+	color: #d7982b;
+	font-size: 48px;
+}
+
+.slide h3 {
+	font-size: 28px;
+}
+
+.slide li {
+	padding: 0.25em 0;
+}
+
+.slide li li {
+	padding: 0.35em 0 0.35em 1em;
+}
+
+/**
+ * Individual Slides
+ */
+#slide-5 h3, #slide-14 h3, #slide-21 h3 {
+	padding-top: 32%;
+	text-align: center;
+}
+
+
+
+/**
+ * Other Styles
+ */
+#hello {
+	width: 100%;
+	color: transparent;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 300px;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.impress-on-overview #hello {
+	color: #fff;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.impress-enabled {
+	pointer-events: none
+}
+
+.impress-enabled #impress {
+	pointer-events: auto
+}

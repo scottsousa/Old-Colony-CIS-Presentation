@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+
+		<title>Leading &amp; Managing WordPress Products and Projects | Scott Sousa</title>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+		<!-- Syntax Highlighter -->
+		<script type="text/javascript" src="js/syntax-highlighter/shCore.js"></script>
+		<script type="text/javascript" src="js/syntax-highlighter/shBrushJScript.js"></script>
+		<script type="text/javascript" src="js/syntax-highlighter/shBrushPhp.js"></script>
+		<link href="css/syntax-highlighter/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="css/syntax-highlighter/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<div id="hello">Hello</div>
+		<div id="impress">
+			<!-- Overview (not a slide but still a step in the presentation) -->
+			<div id="overview" class="step" data-scale="18"></div>
+
+			<!-- Slide 1 -->
+			<div id="slide-1" class="step slide" data-rotate="15" data-x="400" data-y="-1400">
+				<h1>Leading &amp; Managing WordPress Products and Projects</h1>
+				<h2>Scott Sousa</h2>
+				<h3>
+					Director of Web Engineering/Lead Developer
+					<br />
+					<a href="http://slocumstudio.com" target="_blank">Slocum Design Studio</a>
+				</h3>
+			</div>
+
+			<!-- Slide 2 -->
+			<div id="slide-2" class="step slide" data-rotate="30" data-x="1410" data-y="-980">
+				<h3 class="slide-title">Who is Slocum Design Studio?</h3>
+				<ul>
+					<li>Located in Dartmouth, MA</li>
+					<li>Team of 8 (6 local, 2 abroad)</li>
+					<li>Family-owned and run business</li>
+					<li>WordPress</li>
+					<li>Develop and manage the Old Colony website</li>
+				</ul>
+			</div>
+
+			<!-- Slide 3 -->
+			<div id="slide-3" class="step slide" data-rotate="45" data-x="2280" data-y="-310">
+				<h3 class="slide-title">Who am I?</h3>
+				<ul>
+					<li>26 years old</li>
+					<li>Previously was a web development instructor at Old Colony</li>
+					<li>Associate Degree: Web Site Development</li>
+					<li>Bachelor's Degree: Graphic Design &amp; New Media</li>
+					<li>Drag racer (hobby)</li>
+				</ul>
+			</div>
+
+			<!-- Slide 4 -->
+			<div id="slide-4" class="step slide" data-rotate="60" data-x="2950" data-y="560">
+				<iframe width="1280" height="720" src="https://www.youtube.com/embed/C9uIOHK5JQ0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<!-- Slide 5 -->
+			<div id="slide-5" class="step slide" data-rotate="75" data-x="3370" data-y="1570">
+				<h3 class="slide-title">Let's get back on topic</h3>
+			</div>
+
+			<!-- Slide 6 -->
+			<div id="slide-6" class="step slide" data-rotate="90" data-x="3510" data-y="2660">
+				<h3 class="slide-title">First Up: Client Projects</h3>
+				<ul>
+					<li>Smaller websites (i.e. 5-10 pages)</li>
+					<li>Larger applications (web apps)</li>
+					<li>Shifting towards larger sites from larger companies and enterprise level</li>
+					<li>Let's take a look at some examples</li>
+				</ul>
+			</div>
+
+			<!-- Slide 7 -->
+			<div id="slide-7" class="step slide" data-rotate="105" data-x="3360" data-y="3750">
+				<h3 class="slide-title">GuideRI Web App</h3>
+				<a href="http://guideri.com/" target="_blank">
+					<img src="images/guide-ri.jpg" alt="GuideRI Web App" width="1100" height="783" class="small-img" />
+				</a>
+				<p class="center">The biggest website for the smallest state (and smallest devices)</p>
+			</div>
+
+			<!-- Slide 8 -->
+			<div id="slide-8" class="step slide" data-rotate="120" data-x="2950" data-y="4770">
+				<h3 class="slide-title">Listings based on your location</h3>
+				<p>Use current physical location and determine nearest listing</p>
+			</div>
+
+			<!-- Slide 9 -->
+			<div id="slide-9" class="step slide has-code" data-rotate="135" data-x="2280" data-y="5650">
+				<h3 class="slide-title">Geolocation with JavaScript</h3>
+				<pre class="brush: js">
+					&lt;script type="text/javascript"&gt;
+						if ( 'geolocation' in navigator ) {
+							// Get & watch position
+							navigator.geolocation.watchPosition(
+								// Success
+								function( position ) {
+									// Log the position to the browser console
+									console.log( position );
+								},
+								// Error
+								function() {
+									// Log the position error message to the console
+									console.log( 'Position is not available.' );
+								},
+								// Options (high accuracy enabled)
+								{ enableHighAccuracy: true }
+							);
+						}
+					&lt;/script&gt;</pre>
+					<!-- Syntax Highlighter adds an extra newline at the end of code examples if the </pre> tag is on a newline -->
+			</div>
+
+			<!-- Slide 10 -->
+			<div id="slide-10" class="step slide" data-rotate="150" data-x="1410" data-y="6320">
+				<h3 class="slide-title">Displaying the results</h3>
+				<ul>
+					<li>Location info is included in the query for the data</li>
+					<li>Filtering parameters are also added to the query</li>
+				</ul>
+			</div>
+
+			<!-- Slide 11 -->
+			<div id="slide-11" class="step slide" data-rotate="165" data-x="400" data-y="6740">
+				<h3 class="slide-title">So how do we accomplish something like this?</h3>
+				<ul>
+					<li>WordPress includes <code>WP_Query()</code> which is useful to make the query...</li>
+					<li>but there <s>isn't</s> wasn't an easy way to display the results</li>
+					<li>In late 2014, we introduced <strong>Conductor Plugin</strong> to the mix
+						<ul>
+							<li>Widgets - Querying Content</li>
+							<li>Layouts - Design</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Slide 12 -->
+			<div id="slide-12" class="step slide" data-rotate="180" data-x="-700" data-y="6880">
+				<h3 class="slide-title">What is Conductor?</h3>
+				<img src="images/conductor-displays.png"  alt="Conductor Displays" width="297" height="261" class="small-img" />
+				<ul>
+					<li>Premium WordPress plugin that Slocum Design Studio developed</li>
+					<li>Makes it easy for to <a href="http://slocum.me/nightly/" target="_blank">display WordPress content</a> — without code
+						<ul>
+							<li>Custom page layouts</li>
+							<li>Content displays</li>
+						</ul>
+					</li>
+					<li>Works across a majority of WordPress themes</li>
+				</ul>
+			</div>
+
+			<!-- Slide 13 -->
+			<div id="slide-13" class="step slide" data-rotate="195" data-x="-1790" data-y="6740">
+				<h3 class="slide-title">How does Conductor work?</h3>
+				<ul>
+					<li>Load Conductor template in place of normal requested template</li>
+					<li>Conductor templates contain widget areas which can output content
+						<ul>
+							<li>Output content with Conductor Widgets</li>
+							<li>Add other widgets into the mix to create a more robust experience</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Slide 14 -->
+			<div id="slide-14" class="step slide" data-rotate="210" data-x="-2800" data-y="6320">
+				<h3 class="slide-title">Back to GuideRI for just a sec</h3>
+			</div>
+
+			<!-- Slide 15 -->
+			<div id="slide-15" class="step slide" data-rotate="225" data-x="-3680" data-y="5640">
+				<h3 class="slide-title">Filtering the results</h3>
+				<p>To allow for filtering, we need to be able to adjust the query of a Conductor Widget</p>
+				<ul>
+					<li>We can't modify the Conductor plugin (even though we maintain the source code)
+						<ul>
+							<li>Future updates will break what we've built</li>
+						</ul>
+					</li>
+					<li>So how do we accomplish this? <strong>Hooks</strong></li>
+				</ul>
+			</div>
+
+			<!-- Slide 16 -->
+			<div id="slide-16" class="step slide" data-rotate="240" data-x="-4360" data-y="4760">
+				<h3 class="slide-title">What are WordPress Hooks?</h3>
+				<p>A term used to categorize <strong>Actions</strong> and <strong>Filters</strong></p>
+				<ul>
+					<li><strong>Actions</strong>
+						<ul>
+							<li>Represent a place in time where a function or logic can be executed during page load</li>
+						</ul>
+					</li>
+					<li><strong>Filters</strong>
+						<ul>
+							<li>Allow data to be modified before it is used within logic</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Slide 17 -->
+			<div id="slide-17" class="step slide" data-rotate="255" data-x="-4780" data-y="3730">
+				<h3 class="slide-title">Conductor Hooks</h3>
+				<p>Conductor contains <strong>103 actions</strong> and <strong>84 filters</strong></p>
+			</div>
+
+			<!-- Slide 18 -->
+			<div id="slide-18" class="step slide" data-rotate="270" data-x="-4920" data-y="2630">
+				<h3 class="slide-title"><code>conductor_widget_query_args</code></h3>
+				<p>A filter which allows the query to be modified before it is executed</p>
+			</div>
+
+			<!-- Slide 19 -->
+			<div id="slide-19" class="step slide has-code" data-rotate="285" data-x="-4770" data-y="1530">
+				<h3 class="slide-title"><code>conductor_widget_query_args</code></h3>
+				<pre class="brush: php">
+					&lt;?php
+						/**
+						 * This function modifies the Conductor Widget query arguments to add Deals query data.
+						 */
+						add_filter( 'conductor_query_args', 'guideri_conductor_query_args', 10, 4 );
+
+						function conductor_query_args( $query_args, $type, $widget_instance, $conductor_query ) {
+							// Meta query
+							$query_args['meta_query'] = array(
+								// Deal Name exists
+								array(
+									'key' => 'deal_name',
+									'compare' => 'EXISTS'
+								),
+								// Deal Name is not empty
+								array(
+									'key' => 'deal_name',
+									'value' => array( '' ),
+									'compare' => 'NOT IN'
+								)
+							);
+
+							// Meta key
+							$query_args['meta_key'] = 'deal_name';
+
+							return $query_args;
+						}</pre>
+				<!-- Syntax Highlighter adds an extra newline at the end of code examples if the </pre> tag is on a newline -->
+			</div>
+
+			<!-- Slide 20 -->
+			<div id="slide-20" class="step slide" data-rotate="300" data-x="-4360" data-y="510">
+				<h3 class="slide-title">Let's look at some other examples of client projects</h3>
+				<ul>
+					<li><a href="https://wheatoncollege.edu/giving/onlinegiving/" target="_blank">Wheaton College</a></li>
+					<li><a href="http://wpthistory.org/" target="_blank">Westport Historical Society</a></li>
+					<li><a href="http://cambridge.com/" target="_blank">Cambridge.com</a></li>
+					<li><a href="http://brookline.com/" target="_blank">Brookline.com</a></li>
+				</ul>
+			</div>
+
+			<!-- Slide 21 -->
+			<div id="slide-21" class="step slide" data-rotate="315" data-x="-3690" data-y="-350">
+				<h3 class="slide-title">Brookline.com uses our Minimize Theme</h3>
+			</div>
+
+			<!-- Slide 22 -->
+			<div id="slide-22" class="step slide" data-rotate="330" data-x="-2810" data-y="-1000">
+				<h3 class="slide-title">WordPress Themes</h3>
+				<p>Along with Conductor Plugin, I also manage the development of <a href="https://slocumthemes.com/wordpress-themes/" target="_blank">9 free &amp; commercial themes</a></p>
+			</div>
+
+			<!-- Slide 23 -->
+			<div id="slide-23" class="step slide" data-rotate="345" data-x="-1780" data-y="-1420">
+				<ul>
+					<li>59121 <a href="https://wordpress.org/themes/minimize/" target="_blank">Minimize</a></li>
+					<li>30965 <a href="https://wordpress.org/themes/epic/" target="_blank">Epic</a></li>
+					<li>30902 <a href="https://wordpress.org/themes/modern-estate/" target="_blank">Modern Estate</a></li>
+					<li>13442 <a href="https://wordpress.org/themes/socialize-lite/" target="_blank">Socialize</a></li>
+					<li>52248 <a href="https://wordpress.org/themes/capture/" target="_blank">Capture</a></li>
+					<li>37146 <a href="https://wordpress.org/themes/modern-business/" target="_blank">Modern Business</a></li>
+					<li>12087 <a href="https://wordpress.org/themes/journal-lite/" target="_blank">Journal</a></li>
+					<li>9406 <a href="https://wordpress.org/themes/simple-shop/" target="_blank">Simple Shop</a></li>
+					<li>527 <a href="https://wordpress.org/themes/symphony/" target="_blank">Symphony</a></li>
+				</ul>
+			</div>
+
+			<!-- Slide 24 -->
+			<div id="slide-24" class="step slide" data-rotate="360" data-x="-690" data-y="-1550">
+				<ul>
+					<li><a href="https://wordpress.org/themes/minimize/" target="_blank">Minimize</a> - 59,121</li>
+					<li><a href="https://wordpress.org/themes/epic/" target="_blank">Epic</a> - 30,965</li>
+					<li><a href="https://wordpress.org/themes/modern-estate/" target="_blank">Modern Estate</a> - 30,902</li>
+					<li><a href="https://wordpress.org/themes/socialize-lite/" target="_blank">Socialize</a> - 13,442</li>
+					<li><a href="https://wordpress.org/themes/capture/" target="_blank">Capture</a> - 52,248</li>
+					<li><a href="https://wordpress.org/themes/modern-business/" target="_blank">Modern Business</a> - 37,146</li>
+					<li><a href="https://wordpress.org/themes/journal-lite/" target="_blank">Journal</a> - 12,087</li>
+					<li><a href="https://wordpress.org/themes/simple-shop/" target="_blank">Simple Shop</a> - 9,406</li>
+					<li><a href="https://wordpress.org/themes/symphony/" target="_blank">Symphony</a> - 527</li>
+				</ul>
+			</div>
+
+			<!-- Slide 25 -->
+			<div id="slide-25" class="step slide" data-rotate="405" data-x="10330" data-y="2090">
+				<h3 class="slide-title">Managing development of WordPress themes</h3>
+				<p>Let's take a look at what's involved:</p>
+				<ul>
+					<li>Styles (CSS)</li>
+					<li>Templates</li>
+					<li>The Loop</li>
+					<li>Navigation</li>
+					<li>Sidebars &amp; Widgets</li>
+					<li>Comments
+						<ul>
+							<li>Author comments styled differently</li>
+						</ul>
+					</li>
+					<li>Search</li>
+					<li><pre>wp_link_pages()</pre></li>
+				</ul>
+			</div>
+
+			<!-- Slide 26 -->
+			<div id="slide-26" class="step slide" data-rotate="375" data-x="8970" data-y="1300">
+				<h3 class="slide-title">But wait there's more!</h3>
+				<ul>
+					<li>Date and time (should be linked if viewing a single Post without a title)</li>
+					<li>Internationalization</li>
+					<li>Everything has to be GPL (or compatible)</li>
+					<li>The "WordPress way"</li>
+					<li>No PHP or JavaScript errors</li>
+					<li>Sanitize everything</li>
+					<li>Screenshot must be included</li>
+					<li>Prefix all functions, options, and variables</li>
+					<li>"Don't do things in a theme considered plugin territory"</li>
+					<li>All theme options must be added using the Customizer API (04/21/15)</li>
+					<li>Guidelines are constantly changing</li>
+				</ul>
+			</div>
+
+			<!-- Slide 27 -->
+			<div id="slide-27" class="step slide" data-rotate="350" data-x="7480" data-y="1220">
+				<h3 class="slide-title">Why?</h3>
+				<p>All of these rules and guidelines will help make you a <strong>better WordPress developer</strong></p>
+			</div>
+
+			<!-- Slide 28 -->
+			<div id="slide-28" class="step slide" data-rotate="310" data-x="6220" data-y="1890">
+				<h3 class="slide-title">We also have Note</h3>
+				<p><a href="https://wordpress.org/plugins/note/" target="_blank">Note</a> is our companion plugin to Conductor</p>
+				<p>Available for free</p>
+			</div>
+
+			<!-- Slide 29 -->
+			<div id="slide-29" class="step slide" data-rotate="295" data-x="5470" data-y="3060">
+				<h3 class="slide-title">Managing development of WordPress plugins</h3>
+				<p>Let's take a look at what's involved:</p>
+				<ul>
+					<li>One-time approval</li>
+				</ul>
+			</div>
+
+			<!-- Slide 30 -->
+			<div id="slide-30" class="step slide" data-rotate="285" data-x="5030" data-y="4250">
+				<h3 class="slide-title">My typical weekly schedule</h3>
+				<ul>
+					<li>Monday - Wednesday: Product development*</li>
+					<li>Thursday - Friday: Client projects*</li>
+				</ul>
+			</div>
+
+			<!-- Slide 31 -->
+			<div id="slide-31" class="step slide" data-rotate="275" data-x="4790" data-y="5520">
+				<h3 class="slide-title">Products: Responsibilities</h3>
+				<ul>
+					<li>Review new themes &amp; plugins</li>
+					<li>Coordinate &amp; delegate development tasks</li>
+					<li>Coordinate releases</li>
+					<li>Maintain and update</li>
+					<li>Support</li>
+				</ul>
+			</div>
+
+			<!-- Slide 32 -->
+			<div id="slide-32" class="step slide" data-rotate="260" data-x="4850" data-y="6880">
+				<h3 class="slide-title">Client Projects: Responsibilities</h3>
+				<ul>
+					<li>Discovery</li>
+					<li>Create development environments</li>
+					<li><strong>Custom development</strong></li>
+					<li>Create production environments</li>
+					<li>Deadlines</li>
+				</ul>
+			</div>
+
+			<!-- Slide 33 -->
+			<div id="slide-33" class="step slide" data-rotate="220" data-x="5590" data-y="8150">
+				<h3 class="slide-title">Other Responsibilities</h3>
+				<ul>
+					<li>Content marketing - Blog posts, social media posts</li>
+					<li>Following WordPress core development and decisions
+						<ul>
+							<li><a href="https://wordpress.slack.com/" target="_blank">WordPress Slack Chat</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Slide 34 -->
+			<div id="slide-34" class="step slide" data-rotate="195" data-x="6940" data-y="8810">
+				<h3 class="slide-title">Any Questions?</h3>
+			</div>
+
+			<!-- Slide 35 -->
+			<div id="slide-35" class="step slide" data-rotate="170" data-x="8440" data-y="8860">
+				<h3 class="slide-title">Where can you find me?</h3>
+				<ul>
+					<li><a href="https://slocumstudio.com/">Slocum Design Studio</a></li>
+					<li><a href="https://twitter.com/scott/">@scott on Twitter</a></li>
+					<li><a href="http://scottjsousa.com/">http://scottjsousa.com/</a></li>
+					<li><a href="https://github.com/scottsousa/">https://github.com/scottsousa/</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/impress.js"></script>
+		<script type="text/javascript">
+			var oc_impress = impress();
+
+			// Impress
+			oc_impress.init();
+
+			// Add a listener for clicks to move to the next slide
+			document.addEventListener( 'click', function ( event ) {
+				var target = event.target;
+
+				// <body> element
+				if ( target === document.documentElement ) {
+					// Prevent default
+					event.preventDefault();
+
+					// Next slide
+					oc_impress.next();
+				}
+			}, false );
+
+			// Syntax Highlighter
+			SyntaxHighlighter.all()
+		</script>
+	</body>
+</html>
