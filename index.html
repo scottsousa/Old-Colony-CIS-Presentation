@@ -218,13 +218,13 @@
 
 			<!-- Slide 18 -->
 			<div id="slide-18" class="step slide" data-rotate="270" data-x="-4920" data-y="2630">
-				<h3 class="slide-title"><code>conductor_widget_query_args</code></h3>
+				<h3 class="slide-title"><code>conductor_query_args</code></h3>
 				<p>A filter which allows the query to be modified before it is executed</p>
 			</div>
 
 			<!-- Slide 19 -->
 			<div id="slide-19" class="step slide has-code" data-rotate="285" data-x="-4770" data-y="1530">
-				<h3 class="slide-title"><code>conductor_widget_query_args</code></h3>
+				<h3 class="slide-title"><code>conductor_query_args</code></h3>
 				<pre class="brush: php">
 					&lt;?php
 						/**
@@ -232,7 +232,7 @@
 						 */
 						add_filter( 'conductor_query_args', 'guideri_conductor_query_args', 10, 4 );
 
-						function conductor_query_args( $query_args, $type, $widget_instance, $conductor_query ) {
+						function guideri_conductor_query_args( $query_args, $type, $widget_instance, $conductor_query ) {
 							// Meta query
 							$query_args['meta_query'] = array(
 								// Deal Name exists
